@@ -64,6 +64,10 @@ export class AgregarComponent implements OnInit {
         
     }
 
+    /**
+     * Función que permite guardar la lista.
+     * Primero comprueba que la lista tenga un nombre
+     */
     guardarLista() {
         if (this.nombreLista.length === 0) {
             const alert = this.alertCtrl.create({

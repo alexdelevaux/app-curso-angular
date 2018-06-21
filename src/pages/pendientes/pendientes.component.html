@@ -5,28 +5,35 @@
 </ion-header>
 
 <ion-content padding>
-    <h1>Listas por realizar</h1>
 
-    <ion-card *ngFor="let lista of _listaDeseos.listas">
+    <ion-card *ngFor="let lista of _listaDeseos.listas | pendientes; let i = index">
 
-        <h2> {{ lista.nombre }}</h2>
+        <ion-item color="dark" (click)="verDetalle(lista, i)">
+            <h2 class="blanco"> {{ lista.nombre }}</h2>
+            <ion-note item-right>
+                {{ lista.items.length}} items
+            </ion-note>
+        </ion-item>
+
 
         <ion-list>
-            <ion-item>
-                <ion-icon ios="ios-arrow-forward" md="md-arrow-forward">Tetris</ion-icon>
+            <ion-item *ngFor="let item of lista.items | slice:0:2" (click)="verDetalle(lista, i)">
+                <ion-icon ios="ios-square-outline" md="md-square-outline" *ngIf="!item.completado"></ion-icon>
+                <ion-icon ios="ios-checkbox" md="md-checkbox" *ngIf="item.completado"></ion-icon>
+                {{ item.nombre }}
             </ion-item>
-            <ion-item>
-                <ion-icon ios="ios-arrow-forward" md="md-arrow-forward">Tetris</ion-icon>
+
+            <ion-item *ngIf="lista.items.length > 2" class="text-center">
+                <ion-icon ios="ios-arrow-down" md="md-arrow-down" color="primary"></ion-icon>
             </ion-item>
-            <ion-item>
-                <ion-icon ios="ios-arrow-forward" md="md-arrow-forward">Tetris</ion-icon>
-            </ion-item>
+
+
         </ion-list>
 
     </ion-card>
 
     <ion-fab right bottom>
-        <button ion-fab color="secondary" (click)="irAgregar()">
+        <button ion-fab color="danger" (click)="irAgregar()">
             <ion-icon name="add"></ion-icon>
         </button>
     </ion-fab>
