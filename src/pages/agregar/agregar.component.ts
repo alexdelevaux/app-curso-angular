@@ -30,7 +30,7 @@ export class AgregarComponent implements OnInit {
     ngOnInit(): void { }
 
     /**
-     * Función para agregar items a una lista
+     * ➕ Función para agregar items a una lista
      */
     agregar() {
 
@@ -49,7 +49,7 @@ export class AgregarComponent implements OnInit {
     }
 
     /**
-     * Esta función recibe un índice de un arreglo, y lo borra del arreglo
+     * 🗑 Esta función recibe un índice de un arreglo, y lo borra del arreglo
      * de items con la función splice
      * @param index 
      */
@@ -65,8 +65,8 @@ export class AgregarComponent implements OnInit {
     }
 
     /**
-     * Función que permite guardar la lista.
-     * Primero comprueba que la lista tenga un nombre
+     * 💾 Permite guardar una lista.
+     * 1️⃣ Primero comprueba que la lista tenga un nombre
      */
     guardarLista() {
         if (this.nombreLista.length === 0) {

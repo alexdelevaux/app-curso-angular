@@ -30,7 +30,7 @@ export class DetalleComponent implements OnInit {
     /**
      * Este método cambia el valor de un item de completado=true a false, y viceversa
      * y luego actualiza la data (guarda en el localstorage) con el método actualizarData()
-     * @param item 
+     * @param item 🔁
      */
     actualizar( item: ListaItem) {
         item.completado = !item.completado;
@@ -49,7 +49,9 @@ export class DetalleComponent implements OnInit {
 
     }
 
-
+    /**
+     * Este método permite borrar una lista.
+     */
     borrarItem() {
         const confirm = this.alertCtrl.create({
             title: this.lista.nombre,
