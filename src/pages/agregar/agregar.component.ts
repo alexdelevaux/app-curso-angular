@@ -30,9 +30,9 @@ export class AgregarComponent implements OnInit {
     ngOnInit(): void { }
 
     /**
-     * ➕ Función para agregar items a una lista
+     * ➕ Función para agregar items a una lista 
      */
-    agregar() {
+    agregar() { 
 
         if (this.nombreItem.length == 0) {
             return;
